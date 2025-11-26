@@ -58,7 +58,7 @@ class ElementGrid extends BaseElement
 
     public function getType(): string
     {
-        return _t(__CLASS__ . '.BlockType', 'Grid');
+        return _t(__CLASS__ . '.BlockType', 'Variable Width Grid');
     }
 
     /**
