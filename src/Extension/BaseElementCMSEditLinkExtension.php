@@ -3,16 +3,18 @@
 namespace Antlion\ElementalGrid\Extension;
 
 use DNADesign\Elemental\Models\BaseElement;
-use Antlion\ElementalGrid\Model\ElementGrid;
 use SilverStripe\CMS\Controllers\CMSPageEditController;
 use SilverStripe\Control\Controller;
 use SilverStripe\Core\Extension;
+use RoweGroup\ElementalList\Model\ElementList;
+use Antlion\ElementalGrid\Model\ElementGrid;
 
 /**
  * BaseElement can be nested, CMSEditLink() needs to be updated to reflect that
  *
  * @property BaseElementCMSEditLinkExtension|$this $owner
  */
+
 class BaseElementCMSEditLinkExtension extends Extension
 {
     /**
@@ -31,6 +33,16 @@ class BaseElementCMSEditLinkExtension extends Extension
         }
 
         if ($page instanceof ElementList) {
+            $link = Controller::join_links(
+                $page->CMSEditLink(),
+                'ItemEditForm/field/' . $page->getOwnedAreaRelationName() . '/item/',
+                $owner->ID,
+                'edit'
+            );
+            return;
+        }
+
+        if ($page instanceof ElementGrid) {
             // nested bock - we need to get edit link of parent block
             $link = Controller::join_links(
                 $page->CMSEditLink(),
