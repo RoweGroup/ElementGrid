@@ -3,7 +3,8 @@ name: elemental-grid
 ---
 DNADesign\Elemental\Models\BaseElement:
   extensions:
-    - Antlion\ElementalGrid\Extension\BaseElementCMSEditLinkExtension
+    # - RoweGroup\ElementalList\Extension\BaseElementCMSEditLinkExtension
     - Antlion\ElementalGrid\Extension\BaseElementColumnWidthExtension
-Antlion\ElementalGrid\Model\ElementalGrid:
+    
+Antlion\ElementalGrid\Model\ElementGrid:
   inline_editable: false
