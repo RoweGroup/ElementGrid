@@ -6,7 +6,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use Antlion\ElementalGrid\Model\ElementGrid;
 use SilverStripe\CMS\Controllers\CMSPageEditController;
 use SilverStripe\Control\Controller;
-use SilverStripe\Core\Extension;
+use SilverStripe\Core\Extension; 
 
 /**
  * BaseElement can be nested, CMSEditLink() needs to be updated to reflect that
