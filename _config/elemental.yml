@@ -7,4 +7,4 @@ DNADesign\Elemental\Models\BaseElement:
     - Antlion\ElementalGrid\Extension\BaseElementColumnWidthExtension
     
 Antlion\ElementalGrid\Model\ElementGrid:
-  inline_editable: true
+  inline_editable: false
