@@ -44,10 +44,10 @@ class BaseElementColumnWidthExtension extends Extension
         }
 
         // Show the width selector only for elements nested within ElementGrid
-        $fields->findOrMakeTab('Root.Settings', 'Settings');
+        $fields->findOrMakeTab('Root.Main', 'Main');
 
         $fields->addFieldToTab(
-            'Root.Settings',
+            'Root.Main',
             DropdownField::create('Width', 'Column Width')
                 ->setSource([
                     '1/4' => '¼ (1/4)',
