@@ -7,7 +7,7 @@
 <% end_if %>
 <%-- <div class="cell" data-listelement-count="$Elements.Elements.Count"> --%>
     <% if $Elements %>
-		<div class="grid-x grid-padding-x grid-padding-y {$Top.VerticalAlignClass}" data-listelement-count="$Elements.Elements.Count">
+		<div class="grid-x grid-padding-x grid-padding-y {$Top.VerticalAlignClass} {$Top.HorizontalClass}" data-listelement-count="$Elements.Elements.Count">
 			<% loop $Elements.Elements %>
 				<div class="cell {$WidthClass}">{$Me}</div>
 			<% end_loop %>

@@ -19,10 +19,12 @@ class ElementGrid extends BaseElement
 
     private static array $db = [
         'VerticalAlign' => "Enum('top,middle,bottom','middle')",
+        'HorizontalAlign' => "Enum('left,center,right,justify','center')",
     ];
 
     private static array $defaults = [
         'VerticalAlign' => 'middle',
+        'HorizontalAlign' => 'center',
     ];
 
     private static array $has_one = [
@@ -78,6 +80,14 @@ class ElementGrid extends BaseElement
                     'middle' => 'Middle',
                     'bottom' => 'Bottom',
                 ])
+                ->setEmptyString('- Choose Horizontal Alignment -'),
+                DropdownField::create('HorizontalAlign', 'Horizontal Alignment')
+                ->setSource([
+                    'left' => 'Left',
+                    'center' => 'Center',
+                    'right' => 'Right',
+                    'justify' => 'Justify',
+                ])
                 ->setEmptyString('- Choose Vertical Alignment -')
         );
     }
@@ -109,6 +119,17 @@ class ElementGrid extends BaseElement
             'top' => 'align-top',
             'middle' => 'align-middle',
             'bottom' => 'align-bottom',
+            default => '',
+        };
+    }
+
+    public function HorizontalAlignClass(): string
+    {
+        return match ($this->HorizontalAlign) {
+            'left' => 'align-left',
+            'center' => 'align-center',
+            'right' => 'align-right',
+            'justify' => 'align-justify',
             default => '',
         };
     }
