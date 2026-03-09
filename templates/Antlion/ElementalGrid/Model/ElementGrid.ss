@@ -8,17 +8,17 @@
 		<div class="grid-x grid-padding-x grid-padding-y {$Top.VerticalAlignClass}" data-listelement-count="$Elements.Elements.Count">
 			<% loop $Elements.Elements %>
 				<% if $Modal %>
-					<div class="cell">
+					<div class="cell {$WidthClass} {$CustomClass}">
 						<a href="#" data-remodal-target="modal-element-{$ID}" class="button" contenteditable="false"><% if $ButtonText %>$ButtonText<% else %>Click For Details<% end_if %></a>
-					</div>
-					<div class="remodal" data-remodal-options="hashTracking: false" data-remodal-id="modal-element-{$ID}">
-						<button data-remodal-action="close" class="remodal-close"></button>
-						<div class="element-modal">
+						<div class="remodal" data-remodal-options="hashTracking: false" data-remodal-id="modal-element-{$ID}">
+							<button data-remodal-action="close" class="remodal-close"></button>
+							<div class="element-modal">
 								$Me
+							</div>
 						</div>
 					</div>
 				<% else %>
-					<div class="cell {$WidthClass}">{$Me}</div>
+					<div class="cell {$WidthClass} {$CustomClass}">{$Me}</div>
 				<% end_if %>
 			<% end_loop %>
 		</div>
