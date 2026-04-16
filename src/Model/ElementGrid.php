@@ -7,6 +7,7 @@ use DNADesign\Elemental\Models\ElementalArea;
 use DNADesign\Elemental\Extensions\ElementalAreasExtension;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\CheckboxField;
 
 /**
  * @property string $VerticalAlign
@@ -20,6 +21,7 @@ class ElementGrid extends BaseElement
     private static array $db = [
         'VerticalAlign' => "Enum('top,middle,bottom','middle')",
         'HorizontalAlign' => "Enum('left,center,right,justify','center')",
+         'ColumnSpace' => 'Boolean'
     ];
 
     private static array $defaults = [
@@ -88,7 +90,8 @@ class ElementGrid extends BaseElement
                     'right' => 'Right',
                     'justify' => 'Justify',
                 ])
-                ->setEmptyString('- Choose Vertical Alignment -')
+                ->setEmptyString('- Choose Vertical Alignment -'),
+                CheckboxField::create('ColumnSpace', 'Remove Column Space'),
         );
     }
 

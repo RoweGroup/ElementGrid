@@ -17,7 +17,7 @@ class BaseElementColumnWidthExtension extends Extension
     /** Width dropdown stored on every BaseElement */
     private static array $db = [
         // Slashes are fine in Enum items. Default to full.
-        'Width' => "Enum('1/4,1/3,1/2,2/3,full','full')",
+        'Width' => "Enum('1/4,1/3,1/2,2/3,3/4,full','full')",
         // 'Padding' => "Enum('none,20px,40px,60px','none')",
     ];
 
@@ -54,6 +54,7 @@ class BaseElementColumnWidthExtension extends Extension
                     '1/3' => '⅓ (1/3)',
                     '1/2' => '½ (1/2)',
                     '2/3' => '⅔ (2/3)',
+                    '3/4' => '⅔ (3/4)',
                     'full' => 'Full width',
                 ])
                 ->setEmptyString( '- Choose Column Width -')
@@ -84,6 +85,7 @@ class BaseElementColumnWidthExtension extends Extension
             '1/3' => 'large-4',
             '1/2' => 'large-6',
             '2/3' => 'large-8',
+            '3/4' => 'large-9',
             'full' => 'large-12',
             default => '',
         };
@@ -96,6 +98,7 @@ class BaseElementColumnWidthExtension extends Extension
             '1/3' => 0.3333,
             '1/2' => 0.5,
             '2/3' => 0.6667,
+            '3/4' => 0.75,
             default => 1.0,
         };
     }
